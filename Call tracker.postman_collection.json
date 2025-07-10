@@ -1,0 +1,567 @@
+{
+	"info": {
+		"_postman_id": "2b77b5f6-612a-4928-9661-6555d51e4b50",
+		"name": "Call tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39194637",
+		"_collection_link": "https://dark-moon-194786.postman.co/workspace/Team-Workspace~a89d6af0-7f01-4dcb-862a-9c5af2022b36/collection/39194637-2b77b5f6-612a-4928-9661-6555d51e4b50?action=share&source=collection_link&creator=39194637"
+	},
+	"item": [
+		{
+			"name": "Officer",
+			"item": [
+				{
+					"name": "Create officer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Akhil N M\",\r\n    \"contact\":\"8921792725\",\r\n    \"region\":\"Asia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/officer/new-officer",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"officer",
+								"new-officer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update officer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Akhil N M\",\r\n    \"contact\":\"8921792725\",\r\n    \"region\":\"Asia\",\r\n    \"status\":\"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/officer/edit-officer?id=7f05a693-3fac-4aa3-a4a1-ad23b431f2da",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"officer",
+								"edit-officer"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7f05a693-3fac-4aa3-a4a1-ad23b431f2da"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete officer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/calls/delete-officer",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"calls",
+								"delete-officer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get officer history",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/officer/history?id=7f05a693-3fac-4aa3-a4a1-ad23b431f2da&limit=3&skip=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"officer",
+								"history"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7f05a693-3fac-4aa3-a4a1-ad23b431f2da"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Create Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Client 2\",\r\n    \"contact\":\"8921792725\",\r\n    \"region\":\"Asia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/clients/new-client",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"clients",
+								"new-client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Akhil Ennem\",\r\n    \"contact\":\"8921792725\",\r\n    \"region\":\"Asia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/clients/edit-client?id=90719065-0617-4e2e-a0d4-e6c4fc3459d7",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"clients",
+								"edit-client"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "90719065-0617-4e2e-a0d4-e6c4fc3459d7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/clients/delete-client",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"clients",
+								"delete-client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get client history",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/clients/history?id=35ee3921-0de0-46dc-8622-b6d8b2c503c4&skip=0&limit=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"clients",
+								"history"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "35ee3921-0de0-46dc-8622-b6d8b2c503c4"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Calls",
+			"item": [
+				{
+					"name": "call log",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"7f05a693-3fac-4aa3-a4a1-ad23b431f2da\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/calls/new-call",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"calls",
+								"new-call"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update log",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"outgoing\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/calls/edit-call?id=3905cd94-bc66-4a9d-a9db-032618bd8e69",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"calls",
+								"edit-call"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3905cd94-bc66-4a9d-a9db-032618bd8e69"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete log",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/calls/delete-call?id=55e7585d-b021-4987-a19f-5ba11482f500",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"calls",
+								"delete-call"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "55e7585d-b021-4987-a19f-5ba11482f500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get log by id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/calls/get-call-by-id?id=9d35cd4b-3da3-4106-8e6e-e3c2da16190",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"calls",
+								"get-call-by-id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "9d35cd4b-3da3-4106-8e6e-e3c2da16190"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Analytics",
+			"item": [
+				{
+					"name": "Daily log",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/analytics/daily-volume?id=7f05a693-3fac-4aa3-a4a1-ad23b431f2da&type=month",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"analytics",
+								"daily-volume"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7f05a693-3fac-4aa3-a4a1-ad23b431f2da"
+								},
+								{
+									"key": "type",
+									"value": "month"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "monthly log",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/analytics/monthly-volume?id=7f05a693-3fac-4aa3-a4a1-ad23b431f2da&type=month",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"analytics",
+								"monthly-volume"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7f05a693-3fac-4aa3-a4a1-ad23b431f2da"
+								},
+								{
+									"key": "type",
+									"value": "month"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task over view",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/analytics/task-over-view?startDate=2025-07-05&endDate=2025-07-09",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"analytics",
+								"task-over-view"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2025-07-05"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-07-09"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get log by id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officerID\":\"1\",\r\n    \"clientID\":\"123\",\r\n    \"callType\":\"incoming\",\r\n    \"callOutcome\":\"Successful\",\r\n    \"comment\":\"success\",\r\n    \"callDuration\":\"5\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/calls/new-call",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"calls",
+								"new-call"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
